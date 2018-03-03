@@ -4,9 +4,12 @@ import Pagination from 'components/list/Pagination';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import * as listActions from 'store/modules/list';
+import shouldCancel from 'lib/shouldCancel';
 
 class ListContainer extends Component {
   getPostList = () => {
+    console.log(`shouldCancel : `, shouldCancel());
+    if(shouldCancel()) return;
     // 페이지와 태그 값을 부모로서부터 받아옵니다.
     const { tag, page, ListActions } = this.props;
     ListActions.getPostList({
@@ -17,6 +20,7 @@ class ListContainer extends Component {
 
   componentDidMount() {
     this.getPostList();
+
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -28,7 +32,6 @@ class ListContainer extends Component {
     }
   }
 
-
   render() {
     const { loading, posts, page, lastPage, tag } = this.props;
     if(loading) return null; // 로딩중엔 아무것도 보여주지 않습니다.
@@ -39,6 +42,7 @@ class ListContainer extends Component {
       </div>
     );
   }
+
 }
 
 export default connect(

@@ -14,7 +14,6 @@ const PageTemplate = ({ children }) => (
       {children}
     </main>
     <FooterContainer/>
-    div
   </div>
 );
 

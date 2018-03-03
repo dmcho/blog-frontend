@@ -26,7 +26,7 @@ export default handleActions({
 
       const lastPage = action.payload.headers['last-page'];
       return state.set('posts', fromJS(posts))
-                  .set('lastPage', lastPage);
+                  .set('lastPage', parseInt(lastPage, 10));
     }
   })
 

@@ -22,7 +22,7 @@ class EditorTemplate extends Component {
 
   handleSeparatorMouseDown = (e) => {
     document.body.addEventListener('mousemove', this.handleMouseMove);
-    window.removeEventListener('mouseup', this.handleMouseUp);
+    window.addEventListener('mouseup', this.handleMouseUp);
   }
 
   render() {

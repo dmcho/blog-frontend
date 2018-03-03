@@ -17,7 +17,6 @@ const PostInfo = ({ publishedDate, title, tags}) => (
             tag => <Link key={tag} to={`/tag/${tag}`}>#{tag}</Link>
           )
         }
-        <a>#태그</a> <a>#태그</a> <a>#태그</a>
       </div>
       <div className={cx('date')}>{moment(publishedDate).format('ll')}</div>
     </div>

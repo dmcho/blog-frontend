@@ -47,7 +47,6 @@ class EditorHeaderContainer extends Component {
     }
   }
 
-
   render() {
     const { handleGoBack, handleSubmit } = this;
     const { id } = queryString.parse(this.props.location.search);
